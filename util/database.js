@@ -1,6 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://andrei:cluster0pass@cluster0.zvif5.mongodb.net/twitter?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useUnifiedTopology: true });
+const client = new MongoClient(process.env.MONGODB_URI, { useUnifiedTopology: true });
 let _db;
 
 const mongoConnect = (callback) => {

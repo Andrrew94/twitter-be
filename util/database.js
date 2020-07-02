@@ -1,4 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
+const dotenv = require('dotenv');
+dotenv.config();
 const client = new MongoClient(process.env.MONGODB_URI, { useUnifiedTopology: true });
 let _db;
 

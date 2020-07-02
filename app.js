@@ -5,20 +5,17 @@ const port = process.env.PORT || 8080;
 const mongoConnect = require('./util/database').mongoConnect;
 
 const adminRoutes = require('./routes/admin');
+
 // Middlewares
 app.use(cors());
 app.use(adminRoutes);
 
 // Routes
-
 app.get('/', (req, res) => {
-    res.send('works');
+    res.send({"msg": "Connection works!"});
 });
 
-
-
 mongoConnect(() => {
-    console.log("reached")
     app.listen(port, () => {
         console.log('server listens to port ->', port);
     })
